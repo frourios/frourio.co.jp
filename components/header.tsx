@@ -29,9 +29,6 @@ const PCLayout = () => {
       <Link href="/company_info" style={headerItemStyle}>
         会社概要
       </Link>
-      <Link style={headerItemStyle}>HOGE</Link>
-      <Link style={headerItemStyle}>HOGE</Link>
-      <Link style={headerItemStyle}>HOGE</Link>
     </Stack>
   );
 };
@@ -53,15 +50,12 @@ const SPLayout = () => {
           bg="transparent"
           css={{ border: "none" }}
         />
-        <MenuList>
+        <MenuList fontSize="1.5rem">
           <Link href="/company_info">
             <MenuItem as={Link}>会社概要</MenuItem>
           </Link>
           <Link href="/">
-            <MenuItem as={Link}>HOGE</MenuItem>
-          </Link>
-          <Link href="/">
-            <MenuItem as={Link}>HOGE</MenuItem>
+            <MenuItem as={Link}>HOME</MenuItem>
           </Link>
         </MenuList>
       </Menu>

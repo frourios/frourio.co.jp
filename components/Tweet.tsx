@@ -9,7 +9,7 @@ const Tweets = () => {
           screenName: "frourio_jp",
         }}
         options={{
-          width: "80%",
+          width: "60%",
           chrome: "noheader",
         }}
       />

@@ -20,10 +20,11 @@ const Slider = (props: propsType) => {
       slidesPerView={3}
       spaceBetween={10}
       autoplay={{ delay: 2000, disableOnInteraction: false }}
+      style={{ maxWidth: "900px", marginTop: "8rem" }}
     >
       {info.map((item, index) => {
         return (
-          <SwiperSlide style={{ border: "solid 2px #F4C41A" }} key={index}>
+          <SwiperSlide style={{ border: "solid 2px #3AC9D2" }} key={index}>
             <a
               href={`https://github.com/${item.url}`}
               style={{

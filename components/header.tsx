@@ -47,8 +47,9 @@ const SPLayout = () => {
           as={IconButton}
           icon={<HamburgerIcon />}
           variant="outline"
-          aria-label="Options"
           mr={20}
+          bg="transparent"
+          css={{ border: "none" }}
         />
         <MenuList>
           <Link href="/">

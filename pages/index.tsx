@@ -1,46 +1,33 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 import Slider from "../components/slider";
-import styled from "styled-components";
+import Tweets from "../components/Tweet";
 
-const TweetSection = () => {
-  return (
-    <div style={{ width: "40%", margin: "10rem auto 0 auto" }}>
-      <a
-        className="twitter-timeline"
-        href="https://twitter.com/frourio_jp?ref_src=twsrc%5Etfw"
-      >
-        Tweets by frourio_jp
-      </a>
-      <script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charSet="utf-8"
-      />
-    </div>
-  );
+const sectionStyle: React.CSSProperties = {
+  maxWidth: "900px",
+  margin: "0 auto",
+  padding: "5rem 10rem",
+  clear: "both",
 };
-
-const ContentWrapper = styled.div`
-  max-width: 80%;
-  margin: 0 auto;
-`;
 
 const Home: NextPage = () => {
   const slideInfo = [
     { path: "frourio.png", url: "frouriojs/frourio" },
     { path: "aspida.png", url: "aspida/aspida" },
+    { path: "pathpida.png", url: "aspida/pathpida" },
   ];
+
   return (
     <div>
       <Header />
-      <ContentWrapper>
+      <section style={sectionStyle}>
+        <h2 style={{ fontSize: "3rem", textAlign: "center" }}>プロダクト</h2>
         <Slider info={slideInfo} />
-        <TweetSection />
-      </ContentWrapper>
+      </section>
+      <section style={sectionStyle}>
+        <h2 style={{ fontSize: "3rem", textAlign: "center" }}>ツイート</h2>
+        <Tweets />
+      </section>
     </div>
   );
 };

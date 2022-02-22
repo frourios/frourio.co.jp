@@ -19,7 +19,7 @@ const Slider = (props: propsType) => {
       loop={true}
       slidesPerView={3}
       spaceBetween={10}
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      autoplay={{ delay: 2000, disableOnInteraction: false }}
     >
       {info.map((item, index) => {
         return (

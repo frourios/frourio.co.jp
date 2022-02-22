@@ -26,7 +26,9 @@ const PCLayout = () => {
       justifyContent="flex-end"
       pr={20}
     >
-      <Link style={headerItemStyle}>HOGE</Link>
+      <Link href="/company_info" style={headerItemStyle}>
+        会社概要
+      </Link>
       <Link style={headerItemStyle}>HOGE</Link>
       <Link style={headerItemStyle}>HOGE</Link>
       <Link style={headerItemStyle}>HOGE</Link>
@@ -52,8 +54,8 @@ const SPLayout = () => {
           css={{ border: "none" }}
         />
         <MenuList>
-          <Link href="/">
-            <MenuItem as={Link}>HOGE</MenuItem>
+          <Link href="/company_info">
+            <MenuItem as={Link}>会社概要</MenuItem>
           </Link>
           <Link href="/">
             <MenuItem as={Link}>HOGE</MenuItem>
@@ -76,7 +78,9 @@ const Header = () => {
       display="flex"
       css={{ boxShadow: "0 0 0 2px rgba(34,120,126,.2)" }}
     >
-      <Logo />
+      <Link href="/" style={{ textDecoration: "none" }}>
+        <Logo />
+      </Link>
       <PCLayout />
       <SPLayout />
     </Box>

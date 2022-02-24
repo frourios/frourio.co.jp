@@ -19,7 +19,7 @@ const PCLayout = () => {
           HOME
         </Link>
         <Link href="/company_info" style={headerItemStyle}>
-          会社概要
+          会社情報
         </Link>
       </Box>
       <h3 style={{ fontSize: "1.2rem", marginTop: "1rem" }}>©frourio.inc</h3>

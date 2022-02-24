@@ -27,7 +27,7 @@ const PCLayout = () => {
       pr={20}
     >
       <Link href="/company_info" style={headerItemStyle}>
-        会社概要
+        会社情報
       </Link>
     </Stack>
   );
@@ -51,11 +51,11 @@ const SPLayout = () => {
           css={{ border: "none" }}
         />
         <MenuList fontSize="1.5rem">
-          <Link href="/company_info">
-            <MenuItem as={Link}>会社概要</MenuItem>
-          </Link>
           <Link href="/">
             <MenuItem as={Link}>HOME</MenuItem>
+          </Link>
+          <Link href="/company_info">
+            <MenuItem as={Link}>会社情報</MenuItem>
           </Link>
         </MenuList>
       </Menu>

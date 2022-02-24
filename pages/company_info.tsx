@@ -12,7 +12,7 @@ const Item = (props: { sub: string; val: string }) => {
 
 const Main = () => {
   return (
-    <Layout>
+    <Layout pageTitle="会社情報">
       <Table maxW="900px" m="15rem auto" w="80%" fontSize="1.8rem">
         <Tbody>
           <Item sub="会社名" val="フルーリオ株式会社" />

@@ -1,19 +1,19 @@
 import { Timeline } from "react-twitter-widgets";
+import { Box } from "@chakra-ui/react";
 
 const Tweets = () => {
   return (
-    <div style={{ textAlign: "center" }}>
+    <Box w={{ base: "100%", md: "60%" }} m="0 auto">
       <Timeline
         dataSource={{
           sourceType: "profile",
           screenName: "frourio_jp",
         }}
         options={{
-          width: "60%",
           chrome: "noheader",
         }}
       />
-    </div>
+    </Box>
   );
 };
 

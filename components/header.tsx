@@ -52,10 +52,10 @@ const SPLayout = () => {
         />
         <MenuList fontSize="1.5rem">
           <Link href="/">
-            <MenuItem as={Link}>HOME</MenuItem>
+            <MenuItem>HOME</MenuItem>
           </Link>
           <Link href="/company_info">
-            <MenuItem as={Link}>会社情報</MenuItem>
+            <MenuItem>会社情報</MenuItem>
           </Link>
         </MenuList>
       </Menu>

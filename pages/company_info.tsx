@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Table, Tbody, Tr, Td } from "@chakra-ui/react";
 import Layout from "../components/page";
 
@@ -17,6 +18,9 @@ const Item = (props: { sub: string; val: string }) => {
 const Main = () => {
   return (
     <Layout pageTitle="会社情報">
+      <Head>
+        <title>会社情報</title>
+      </Head>
       <Table
         maxW="900px"
         m="15rem auto"

@@ -22,7 +22,7 @@ const PCLayout = () => {
           会社情報
         </Link>
       </Box>
-      <h3 style={{ fontSize: "1.2rem", marginTop: "1rem" }}>©frourio.inc</h3>
+      <h3 style={{ fontSize: "1.2rem", marginTop: "1rem" }}>©frourio.Inc</h3>
     </Stack>
   );
 };

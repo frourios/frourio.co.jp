@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-export default () => {
+function MyLayout() {
   return (
     <Html>
       <Head>
@@ -12,4 +12,5 @@ export default () => {
       </body>
     </Html>
   );
-};
+}
+export default MyLayout;

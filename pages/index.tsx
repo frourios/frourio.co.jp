@@ -22,6 +22,7 @@ const Home: NextPage = () => {
         <img
           src="office.png"
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          alt="office"
         />
       </Box>
       <Slider info={slideInfo} />

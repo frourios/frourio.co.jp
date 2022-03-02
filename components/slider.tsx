@@ -37,6 +37,7 @@ const Slider = (props: propsType) => {
                 width={330}
                 objectFit="contain"
                 unoptimized
+                alt={item.path}
               />
             </a>
           </SwiperSlide>

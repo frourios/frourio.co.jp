@@ -25,6 +25,7 @@ jobs:
 
       - run: npm run build
       - run: touch ./out/.nojekyll
+      - run: cp ./public/CNAME ./out/
 
       - uses: peaceiris/actions-gh-pages@v3
         with:

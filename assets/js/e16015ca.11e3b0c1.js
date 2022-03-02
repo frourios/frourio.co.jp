@@ -1,1 +1,0 @@
-(self.webpackChunkfrourio_co_jp=self.webpackChunkfrourio_co_jp||[]).push([[700],{947:function(o){"use strict";o.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"hola","name":"hola","count":1,"permalink":"/blog/tags/hola"}')}}]);

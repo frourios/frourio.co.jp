@@ -70,7 +70,7 @@ const Header = () => {
       position="fixed"
       bg="#ffffff"
       display="flex"
-      css={{ boxShadow: "0 0 0 2px rgba(34,120,126,.2)" }}
+      css={{ boxShadow: "0 0 0 2px rgba(34,120,126,.2)", padding: ".5rem 0" }}
     >
       <Link href="/" style={{ textDecoration: "none" }}>
         <Logo />

@@ -4,7 +4,7 @@ function MyLayout() {
   return (
     <Html>
       <Head>
-        <link rel="icon" href="logo.svg" sizes="64x64" />
+        <link rel="icon" href="favicon.svg" sizes="64x64" />
       </Head>
       <body>
         <Main />

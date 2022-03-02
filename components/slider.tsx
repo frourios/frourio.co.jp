@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
-import Image from "next/image";
 import "swiper/css";
 import "swiper/css/autoplay";
 
@@ -31,12 +30,13 @@ const Slider = (props: propsType) => {
                 display: "flex",
               }}
             >
-              <Image
+              <img
                 src={`/tumb/${item.path}`}
-                height={180}
-                width={330}
-                objectFit="contain"
-                unoptimized
+                style={{
+                  height: "180px",
+                  width: "330px",
+                  objectFit: "contain",
+                }}
                 alt={item.path}
               />
             </a>

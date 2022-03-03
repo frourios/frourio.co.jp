@@ -68,9 +68,14 @@ const Header = () => {
     <Box
       w="100vw"
       position="fixed"
+      top="0"
       bg="#ffffff"
       display="flex"
-      css={{ boxShadow: "0 0 0 2px rgba(34,120,126,.2)", padding: ".5rem 0" }}
+      css={{
+        boxShadow: "0 0 0 2px rgba(34,120,126,.2)",
+        padding: ".5rem 0",
+        zIndex: "10",
+      }}
     >
       <Link href="/" style={{ textDecoration: "none" }}>
         <Logo />

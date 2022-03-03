@@ -18,14 +18,13 @@ const Home: NextPage = () => {
       <Head>
         <title>フルーリオ株式会社</title>
       </Head>
-      <Box height={{ base: "50vh", md: "70vh" }} width="100vw">
-        <img
-          src="office.png"
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          alt="office"
-        />
+      <Box
+        height={{ base: "50vh", md: "50vh" }}
+        width="100vw"
+        css={{ marginTop: "15rem" }}
+      >
+        <Slider info={slideInfo} />
       </Box>
-      <Slider info={slideInfo} />
       <Section title="NEWS" kana="ニュース">
         <Tweets />
       </Section>

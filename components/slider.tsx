@@ -16,25 +16,19 @@ const Slider = (props: propsType) => {
     <Swiper
       modules={[Autoplay]}
       loop={true}
-      slidesPerView={3}
-      spaceBetween={10}
+      slidesPerView={1}
       autoplay={{ delay: 2000, disableOnInteraction: false }}
-      style={{ maxWidth: "900px", marginTop: "8rem" }}
+      style={{ marginTop: "12rem", width: "70%" }}
     >
       {info.map((item, index) => {
         return (
           <SwiperSlide style={{ border: "solid 2px #3AC9D2" }} key={index}>
-            <a
-              href={`https://github.com/${item.url}`}
-              style={{
-                display: "flex",
-              }}
-            >
+            <a href={`https://github.com/${item.url}`}>
               <img
                 src={`/tumb/${item.path}`}
                 style={{
-                  height: "180px",
-                  width: "330px",
+                  height: "560px",
+                  width: "1280px",
                   objectFit: "contain",
                 }}
                 alt={item.path}

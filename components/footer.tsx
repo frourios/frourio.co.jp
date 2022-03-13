@@ -30,7 +30,7 @@ const PCLayout = () => {
 const Footer = () => {
   return (
     <Box
-      w="100vw"
+      w="100%"
       h="11vh"
       position="absolute"
       alignItems="center"

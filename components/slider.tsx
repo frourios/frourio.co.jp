@@ -23,7 +23,7 @@ const Slider = (props: propsType) => {
       {info.map((item, index) => {
         return (
           <SwiperSlide style={{ border: "solid 2px #3AC9D2" }} key={index}>
-            <a href={`https://github.com/${item.url}`}>
+            <a href={`https://${item.url}`}>
               <img
                 src={`/tumb/${item.path}`}
                 style={{

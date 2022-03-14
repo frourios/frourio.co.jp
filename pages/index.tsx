@@ -7,9 +7,9 @@ import Head from "next/head";
 
 const Home: NextPage = () => {
   const slideInfo = [
-    { path: "frourio.png", url: "frouriojs/frourio" },
-    { path: "aspida.png", url: "aspida/aspida" },
-    { path: "pathpida.png", url: "aspida/pathpida" },
+    { path: "frourio.png", url:  "frourio.com" },
+    { path: "aspida.png", url:   "github.com/aspida/aspida" },
+    { path: "pathpida.png", url: "github.com/aspida/pathpida" },
   ];
 
   return (

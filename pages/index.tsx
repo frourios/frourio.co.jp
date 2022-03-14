@@ -4,7 +4,6 @@ import Tweets from "../components/Tweet";
 import Layout from "../components/page";
 import Section from "../components/section";
 import Head from "next/head";
-import { Box } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
   const slideInfo = [

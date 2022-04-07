@@ -5,6 +5,7 @@ function MyLayout() {
     <Html>
       <Head>
         <link rel="icon" href="favicon.svg" sizes="64x64" />
+        <meta property="og:image" content="ogp.png" />
       </Head>
       <body>
         <Main />

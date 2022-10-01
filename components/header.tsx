@@ -26,9 +26,6 @@ const PCLayout = () => {
       justifyContent="flex-end"
       pr={20}
     >
-      <Link href="/company_info" style={headerItemStyle}>
-        会社情報
-      </Link>
     </Stack>
   );
 };
@@ -69,10 +66,8 @@ const Header = () => {
       w="100vw"
       position="fixed"
       top="0"
-      bg="#ffffff"
       display="flex"
       css={{
-        boxShadow: "0 0 0 2px rgba(34,120,126,.2)",
         padding: ".5rem 0",
         zIndex: "10",
       }}

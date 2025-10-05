@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フルーリオ株式会社 - Frourio, Inc.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Yu Gothic', YuGothic, sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        nav {
+            background: #f5f5f5;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1a237e;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3f51b5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            margin-bottom: 5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #1a237e;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #3f51b5;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #3f51b5;
+            margin: 2rem 0 1rem 0;
+        }
+
+        /* ミッション */
+        .mission {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .mission p {
+            font-size: 1.5rem;
+            color: #1a237e;
+            font-weight: 500;
+        }
+
+        /* 事業内容カード */
+        .business-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #3f51b5;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* セクション共通スタイル */
+        .section-intro {
+            background: #f0f4f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3f51b5;
+        }
+
+        /* 形式手法セクション */
+        .fm-proofs {
+            background: #fafafa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .fm-proofs ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .fm-proofs li {
+            padding: 0.6rem 0 0.6rem 1.5rem;
+            position: relative;
+        }
+
+        .fm-proofs li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #3f51b5;
+            font-weight: bold;
+        }
+
+        .fm-advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .advantage-box {
+            background: #fafafa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 3px solid #3f51b5;
+        }
+
+        .advantage-box h4 {
+            color: #1a237e;
+            margin-bottom: 0.8rem;
+        }
+
+        /* LEAN・変分原理セクション */
+        .vp-intro-box {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #1976d2;
+        }
+
+        .vp-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .vp-example {
+            background: #fafafa;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #42a5f5;
+        }
+
+        .vp-example strong {
+            color: #1565c0;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .vp-structure {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .math-steps {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        .math-steps p {
+            margin: 0.5rem 0;
+            padding-left: 1rem;
+        }
+
+        .significance-major {
+            background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #0288d1;
+        }
+
+        .significance-major h4 {
+            color: #01579b;
+            margin-bottom: 1rem;
+        }
+
+        .significance-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .significance-point {
+            background: white;
+            padding: 1.2rem;
+            border-radius: 6px;
+        }
+
+        .significance-point h5 {
+            color: #0277bd;
+            margin-bottom: 0.5rem;
+        }
+
+        .lean-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .lean-feature {
+            background: #fafafa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 3px solid #2196f3;
+        }
+
+        .lean-feature h4 {
+            color: #1565c0;
+            margin-bottom: 0.8rem;
+        }
+
+        .achievement-highlight {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #3f51b5;
+        }
+
+        .achievement-highlight h4 {
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-highlight ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .achievement-highlight li {
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            position: relative;
+        }
+
+        .achievement-highlight li:before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: #3f51b5;
+        }
+
+        .achievement-note {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid #5c6bc0;
+            font-weight: 500;
+            color: #1a237e;
+        }
+
+        .current-research {
+            background: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #ff9800;
+        }
+
+        .current-research h4 {
+            color: #e65100;
+            margin-bottom: 0.8rem;
+        }
+
+        /* 業績セクション */
+        .achievements-section {
+            background: #fafafa;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .achievements-section h3 {
+            color: #3f51b5;
+            margin-top: 0;
+        }
+
+        .achievements-section ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .achievements-section li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .achievements-section li:before {
+            content: "▸";
+            color: #3f51b5;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        /* 会社情報 */
+        .company-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .info-table {
+            margin-top: 1.5rem;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #1a237e;
+        }
+
+        .external-link {
+            color: #3f51b5;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .external-link:hover {
+            border-bottom-color: #3f51b5;
+        }
+
+        footer {
+            background: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .info-row {
+                grid-template-columns: 1fr;
+            }
+
+            .mission p {
+                font-size: 1.2rem;
+            }
+
+            .business-cards,
+            .fm-advantages,
+            .vp-examples,
+            .significance-points,
+            .lean-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>フルーリオ株式会社</h1>
+        <div class="subtitle">Frourio, Inc.</div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#mission">ミッション</a></li>
+            <li><a href="#business">事業内容</a></li>
+            <li><a href="#formal-methods">形式手法</a></li>
+            <li><a href="#lean">LEAN・変分原理</a></li>
+            <li><a href="#achievements">業績</a></li>
+            <li><a href="#company">会社情報</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- ミッション -->
+        <section id="mission">
+            <div class="mission">
+                <p>数学で宇宙の謎を全て解く</p>
+            </div>
+        </section>
+
+        <!-- 事業内容 -->
+        <section id="business">
+            <h2>事業内容</h2>
+            <div class="business-cards">
+                <div class="card">
+                    <h3>形式手法によるシステム設計</h3>
+                    <p>数学的証明に基づく厳密なシステム設計を提供。暗号プロトコル、分散システム、信頼性が要求されるソフトウェアの形式検証を行います。</p>
+                </div>
+                <div class="card">
+                    <h3>LEAN による数学理論研究</h3>
+                    <p>定理証明支援系LEANを用いた数学理論の形式化研究。フルーリオ数学の変分原理形式化に成功し、現在はリーマン予想の形式化を研究中です。</p>
+                </div>
+                <div class="card">
+                    <h3>AMATELUSプロトコル国際標準化</h3>
+                    <p>W3C諮問委員会メンバーとして、分散型識別子とゼロ知識証明を統合したAMATELUSプロトコルの国際標準化を推進しています。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 形式手法 -->
+        <section id="formal-methods">
+            <h2>形式手法とは</h2>
+            
+            <div class="section-intro">
+                <p>形式手法とは、数学的な論理と証明に基づいてシステムの正しさを保証する技術です。プログラムやプロトコルの仕様を数学的な記法で厳密に定義し、その性質を定理として証明することで、実装前にバグや脆弱性を排除できます。</p>
+            </div>
+
+            <h3>AMATELUSプロトコルにおける形式的証明</h3>
+            <div class="fm-proofs">
+                <p>当社のAMATELUS論文では、以下の性質を数学的に証明しています：</p>
+                <ul>
+                    <li><strong>暗号学的完全性</strong>：DID生成、VC発行、ZKP生成の各プロセスが暗号学的に安全である</li>
+                    <li><strong>信頼伝播の正当性</strong>：VC発行チェーンによる信頼の連鎖が数学的に保証される</li>
+                    <li><strong>プライバシー保護の完全性</strong>：複数DID使用による名寄せ防止が情報理論的に証明可能</li>
+                    <li><strong>脆弱性の限定性</strong>：プロトコルの脆弱性が暗号方式とZKP計算複雑性のみに収束する</li>
+                </ul>
+            </div>
+
+            <h3>形式手法でシステム設計する意義</h3>
+            <div class="fm-advantages">
+                <div class="advantage-box">
+                    <h4>数学的保証</h4>
+                    <p>テストでは発見できない論理的欠陥を、実装前に数学的証明で排除。セキュリティクリティカルなシステムで真の安全性を実現します。</p>
+                </div>
+                <div class="advantage-box">
+                    <h4>設計の透明性</h4>
+                    <p>仕様が形式的に記述されることで、システムの振る舞いが曖昧さなく定義されます。国際標準化や監査において説明責任を果たせます。</p>
+                </div>
+                <div class="advantage-box">
+                    <h4>長期的信頼性</h4>
+                    <p>証明された性質は実装が変わっても保持されます。将来的な拡張や変更時にも、形式的仕様を満たす限り安全性が保証されます。</p>
+                </div>
+                <div class="advantage-box">
+                    <h4>攻撃ベクトルの特定</h4>
+                    <p>形式的分析により、可能な攻撃経路を網羅的に特定。対策が必要な箇所を明確化し、効率的なセキュリティ設計を可能にします。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEAN・変分原理 -->
+        <section id="lean">
+            <h2>LEAN言語と変分原理</h2>
+
+            <h3>変分原理とは</h3>
+            <div class="vp-intro-box">
+                <p>変分原理は、自然現象や数学的構造が「ある量を最小化（または最大化）する」という原理に従うという普遍的な考え方です。物理学では最小作用の原理、幾何学では測地線、機械学習では損失関数の最小化など、科学の多様な分野で中心的な役割を果たしています。</p>
+            </div>
+
+            <h4>変分原理の例</h4>
+            <div class="vp-examples">
+                <div class="vp-example">
+                    <strong>物理学</strong>
+                    <p>最小作用の原理：粒子は作用積分を最小にする経路を運動する</p>
+                </div>
+                <div class="vp-example">
+                    <strong>幾何学</strong>
+                    <p>測地線：2点間の最短経路は距離を最小化する曲線として特徴づけられる</p>
+                </div>
+                <div class="vp-example">
+                    <strong>確率論</strong>
+                    <p>エントロピー最大化原理：制約条件下で最も「無秩序な」分布が実現される</p>
+                </div>
+                <div class="vp-example">
+                    <strong>最適輸送理論</strong>
+                    <p>Wasserstein距離：確率分布間の距離が輸送コストの最小化で定義される</p>
+                </div>
+            </div>
+
+            <div class="vp-structure">
+                <h4>変分原理の数学的構造</h4>
+                <div class="math-steps">
+                    <p><strong>1. 汎関数の定義</strong>：ある空間上の関数や経路に実数値を対応させる汎関数 E[·] を定義</p>
+                    <p><strong>2. 臨界条件</strong>：汎関数の第一変分がゼロとなる条件（Euler-Lagrange方程式）を導出</p>
+                    <p><strong>3. 最小性/最大性</strong>：第二変分の符号により極値の性質を判定</p>
+                </div>
+            </div>
+
+            <h3>新数学体系で変分原理を証明できた場合の科学的意義</h3>
+            <div class="significance-major">
+                <h4>理論の統一性と深い構造の発見</h4>
+                <p>新しい数学体系において変分原理を証明できたということは、その体系が単なる形式的な構造ではなく、自然界の根本原理と同じ「最適性」の論理で支配されていることを意味します。これは理論が本質的な深さを持つ強力な証拠となります。</p>
+            </div>
+
+            <div class="significance-points">
+                <div class="significance-point">
+                    <h5>予測力の獲得</h5>
+                    <p>変分原理が成り立つ系では、観測されていない現象も「何が最適化されるか」から予測できます。</p>
+                </div>
+                <div class="significance-point">
+                    <h5>計算アルゴリズムへの直結</h5>
+                    <p>変分原理は直接、最適化アルゴリズムに変換できます。理論的な美しさが実用的な計算手法を生み出します。</p>
+                </div>
+                <div class="significance-point">
+                    <h5>異なる分野の架橋</h5>
+                    <p>変分構造を持つ理論は、物理学、幾何学、確率論、情報理論などと自然に接続します。</p>
+                </div>
+                <div class="significance-point">
+                    <h5>理論の健全性保証</h5>
+                    <p>変分原理の存在は、理論に矛盾や病的な振る舞いがないことの強い指標です。</p>
+                </div>
+            </div>
+
+            <h3>LEAN言語による形式化</h3>
+            <div class="section-intro">
+                <p>LEANは定理証明支援系と呼ばれるプログラミング言語で、数学的証明をコンピュータで検証可能な形式で記述できます。人間が書いた証明の正しさをコンピュータが厳密に検証するため、証明の誤りや見落としを完全に排除できます。</p>
+            </div>
+
+            <div class="lean-features">
+                <div class="lean-feature">
+                    <h4>型理論に基づく基盤</h4>
+                    <p>依存型理論により、命題と証明を型として表現。数学的厳密さとプログラムの正しさを統一的に扱えます。</p>
+                </div>
+                <div class="lean-feature">
+                    <h4>Mathlibライブラリ</h4>
+                    <p>大学数学の広範な分野を形式化した世界最大級のライブラリ。既存の形式化された定理を活用できます。</p>
+                </div>
+                <div class="lean-feature">
+                    <h4>対話的証明構築</h4>
+                    <p>タクティク証明により、複雑な定理も段階的に証明可能。自動証明機能との組み合わせで効率的な形式化を実現します。</p>
+                </div>
+                <div class="lean-feature">
+                    <h4>厳密な検証</h4>
+                    <p>すべての証明ステップがカーネルで検証されるため、論理的な誤りが入り込む余地がありません。</p>
+                </div>
+            </div>
+
+            <h3>当社の形式化実績</h3>
+            <div class="achievement-highlight">
+                <h4>フルーリオ数学の変分原理形式化に成功</h4>
+                <p>金属比で較正された勾配流幾何における変分原理を、LEANで完全に形式化しました：</p>
+                <ul>
+                    <li>曲率条件（CD(λ,∞)）からエントロピー勾配流（EVI）への導出</li>
+                    <li>Doob変換下での安定性と曲率伝播の等式</li>
+                    <li>Young畳み込みの等号剛性（必要十分条件）</li>
+                    <li>Dirac指数の安定性と位相不変量の保存</li>
+                </ul>
+                <div class="achievement-note">
+                    これにより、フルーリオ数学が変分構造を持つ健全な数学体系であることが形式的に保証されました。
+                </div>
+            </div>
+
+            <div class="current-research">
+                <h4>リーマン予想の形式化を研究中</h4>
+                <p>数学最大の未解決問題であるリーマン予想の完全形式化に挑戦しています。ゼータ関数の性質、解析接続、関数等式などの基礎理論から、予想そのものの厳密な定式化まで、段階的に形式化を進めています。</p>
+            </div>
+        </section>
+
+        <!-- 業績 -->
+        <section id="achievements">
+            <h2>主な業績</h2>
+            <div class="achievements-section">
+                <h3>研究論文</h3>
+                <ul>
+                    <li>AMATELUSプロトコルの論理的完全性に関する形式的証明</li>
+                    <li>フルーリオ数学 基盤論文：曲率⇒エントロピー勾配流/Doob変換下の安定/Young等号剛性の統一定理</li>
+                    <li>フルーリオ代数学：黄金二次体上の二点スケール差分の公理化と解析表現（第一〜四論文）</li>
+                    <li>フルーリオ幾何学：金属比で較正された勾配流幾何（第一〜六論文）</li>
+                    <li>Qualion：金属比で較正された学習幾何 - Mellinformer と Golden Diffusion</li>
+                </ul>
+                
+                <h3>標準化活動</h3>
+                <ul>
+                    <li>W3C諮問委員会メンバー（<a href="https://www.w3.org/membership/list/?initial=&countries%5B%5D=JP&ecosystem=data" class="external-link" target="_blank">W3C Membership</a>）</li>
+                    <li>AMATELUSプロトコルの国際標準化推進</li>
+                </ul>
+
+                <h3>形式検証実績</h3>
+                <ul>
+                    <li>フルーリオ数学の変分原理のLEAN形式化に成功</li>
+                    <li>リーマン予想の形式化研究を推進中</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 会社情報 -->
+        <section id="company">
+            <h2>会社情報</h2>
+            <div class="company-info">
+                <div class="info-table">
+                    <div class="info-row">
+                        <div class="info-label">社名</div>
+                        <div>フルーリオ株式会社（Frourio, Inc.）</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">代表取締役</div>
+                        <div>松田 光秀</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">設立</div>
+                        <div>令和2年1月30日</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">資本金</div>
+                        <div>100万円</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">所在地</div>
+                        <div>〒115-0045 東京都北区赤羽2-4-14-2A</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2020-2025 Frourio, Inc. All rights reserved.</p>
+    </footer>
+</body>
+</html>
